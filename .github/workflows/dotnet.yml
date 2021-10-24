@@ -22,7 +22,7 @@ jobs:
       run: dotnet run
     - name: Expand Swap
       run: |
-        sudo dd if=/dev/zero of=/swapfile bs=64M count=96
+        sudo dd if=/dev/zero of=/swapfile bs=64M count=128
         sudo mkswap /swapfile
         sudo swapon /swapfile
     - name: Build cpp
