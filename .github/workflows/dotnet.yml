@@ -1,0 +1,33 @@
+name: .NET
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Generate code
+      run: dotnet run
+    - name: Build cpp
+      run: g++ -m64 main.cpp
+    - name: Pack files
+      run:
+        mv a.out 88w
+    - name: Upload the build artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: 88w
+        path: 88w 
+      
