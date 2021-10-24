@@ -21,7 +21,7 @@ jobs:
     - name: Generate code
       run: dotnet run
     - name: Build cpp
-      run: g++ -m64 main.cpp
+      run: g++ main.cpp
     - name: Pack files
       run:
         mv a.out 88w
