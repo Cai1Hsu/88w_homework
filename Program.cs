@@ -29,7 +29,7 @@ using (StreamWriter w = new StreamWriter("./main.cpp",true)){
         int len = stri.Length;
         w.WriteLine($"\t\t\tcout << \"是{len}位数\" << endl;");
         for(var d = 0;d < len;d++){
-            w.WriteLine($"\t\t\tcout << \"第{units[d]}位是: {stri[d]}\" << endl;");
+            w.WriteLine($"\t\t\tcout << \"{units[d]}位是: {stri[d]}\" << endl;");
         }
         w.WriteLine($"\t\t\tcout << \"倒过来是: {Reverse(i)}\" << endl;");
         w.WriteLine("\t\t\tbreak;");
