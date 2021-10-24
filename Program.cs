@@ -23,7 +23,7 @@ using (StreamWriter w = new StreamWriter("./main.cpp",true)){
     w.WriteLine("\tcin >> x;");
     w.WriteLine("\tswitch(x){");
 
-    for(var i = 0;i < 100000;i++){
+    for(var i = 0;i < 1000;i++){
         w.WriteLine($"\t\tcase {i}:");
         string stri = i.ToString();
         int len = stri.Length;
