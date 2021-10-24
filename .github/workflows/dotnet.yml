@@ -22,11 +22,11 @@ jobs:
       run: dotnet run
     - name: Expand Swap
       run: |
-        sudo dd if=/dev/zero of=/swapfile bs=64M count=32
+        sudo dd if=/dev/zero of=/swapfile bs=64M count=64
         sudo mkswap /swapfile
         sudo swapon /swapfile
     - name: Build cpp
-      run: g++ main.cpp
+      run: g++ -m64 main.cpp
     - name: Pack files
       run:
         mv a.out 88w
