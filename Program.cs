@@ -19,7 +19,7 @@ using (StreamWriter w = new StreamWriter("./main.cpp",true)){
     w.WriteLine("using namespace std;");
     w.WriteLine("int main(){");
     w.WriteLine("\tint x = 0;");
-    w.WriteLine("\tcout << \"\"");
+    w.WriteLine("\tcout << \"请给出一个不多于5位的整数:\";");
     w.WriteLine("\tcin >> x;");
     w.WriteLine("\tswitch(x){");
 
