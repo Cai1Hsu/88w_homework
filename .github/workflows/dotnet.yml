@@ -20,8 +20,8 @@ jobs:
       run: dotnet restore
     - name: Create project
       run: |
-        mkdir 88w
-        cd 88w
+        mkdir code
+        cd code
         dotnet new console
         rm Program.cs
     - name: Generate code
