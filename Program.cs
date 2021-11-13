@@ -13,12 +13,11 @@ string Reverse(int i){
 
 string[] units = new string[]{"个","十","百","千","万"};
 
-using (StreamWriter w = new StreamWriter("./main.cpp",true)){
-    
+using (StreamWriter w = new StreamWriter("./code/Program.cs",true)){
     w.WriteLine("using System;");
     w.WriteLine("int x = 0;");
     w.WriteLine("Console.Write(\"请给出一个不多于5位的整数:\");");
-    w.WriteLine("x = Convert.ToInt32(Console.ReadLine())");
+    w.WriteLine("x = Convert.ToInt32(Console.ReadLine());");
     w.WriteLine("switch(x){");
 
     for(var i = 0;i < 100000;i++){

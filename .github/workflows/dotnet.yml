@@ -18,6 +18,12 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
+    - name: Create project
+      run: |
+        mkdir 88w
+        cd 88w
+        dotnet new console
+        rm Program.cs
     - name: Generate code
       run: dotnet run
     - name: Expand Swap
@@ -25,18 +31,18 @@ jobs:
         sudo dd if=/dev/zero of=/swapfile bs=64M count=128
         sudo mkswap /swapfile
         sudo swapon /swapfile
-    - name: Build cpp
-      run: g++ main.cpp
-    - name: Pack files
-      run:
-        mv a.out 88w
+    - name: Restore
+      run: dotnet restore
+    - name: Build
+      run: dotnet build
+    - name: Show files
+      run: tree ./
     - name: Clean swapfile
       run: |
         sudo swapoff /swapfile
         sudo rm /swapfile
-    - name: Upload the build artifact
-      uses: actions/upload-artifact@v2.2.4
-      with:
-        name: 88w
-        path: 88w 
-      
+#    - name: Upload the build artifact
+#      uses: actions/upload-artifact@v2.2.4
+#      with:
+#        name: 88w
+#        path: 88w 
