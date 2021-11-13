@@ -20,6 +20,7 @@ jobs:
       run: dotnet restore
     - name: Create project
       run: |
+        cd ..
         mkdir code
         cd code
         dotnet new console
@@ -32,11 +33,11 @@ jobs:
         sudo mkswap /swapfile
         sudo swapon /swapfile
     - name: Restore
-      run: dotnet restore
+      run: cd ../code/ && dotnet restore
     - name: Build
-      run: dotnet build
+      run: cd ../code/ &&dotnet build
     - name: Show files
-      run: tree ./
+      run: cd ../code/ && tree ./
     - name: Clean swapfile
       run: |
         sudo swapoff /swapfile
